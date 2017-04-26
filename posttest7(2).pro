@@ -1,20 +1,31 @@
 DOMAINS
- integerlist = integer*
+nilailist = string*
+matakuliah = symbol
+nilai = symbol
 PREDICATES
- tambah(integerlist,integerlist,integerlist)
+nondeterm mahasiswa(symbol,matakuliah,nilai)
 
 CLAUSES
- tambah([],List,List).
- tambah([H|L1],List2,[H|L3]):-
- tambah(L1,List2,L3).
+mahasiswa("Supardi","Intelejensi Buatan","A").
+mahasiswa("Suradi","Intelejensi Buatan","B").
+mahasiswa("Suyatmi","Intelejensi Buatan","C").
+mahasiswa("Suparni","Intelejensi Buatan","D").
+mahasiswa("Sujiman","Intelejensi Buatan","C").
+mahasiswa("Suharto","PDE","B").
+mahasiswa("Sudirman","PDE","C").
+mahasiswa("Supardi","PDE","C").
+mahasiswa("Suyatmi","PDE","B").
+mahasiswa("Sutini","PDE","D").
+mahasiswa("Suharto","Sistem Operasi","B").
+mahasiswa("Sutini","Sistem Operasi","A").
+mahasiswa("Supardi","Sistem Operasi","A").
+mahasiswa("Suparni","Sistem Operasi","B").
+mahasiswa("Suripah","Sistem Operasi","C").
+
 GOAL
- tambah([1,2,3],[5,6],L).
- 
- /* * * * * * * * * * * * * * * Analisis * * * * * * * * * * * * * * * * * 
- * goal L = [1,2,3,5,6]
- * dilihat dari aturan L = [H | L3] 
- * dengan H sama dengan H dari nilai pertama yg berarti didapat 1,2,3 
- * dan dari fakta pertama tambah([],List,List).
- * yg berarti nilai nya sama dengan list ke 2 yaitu 5,6
- * dan goal nya L = [1,2,3,5,6]
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+ write("No. 1 "),nl,
+ mahasiswa("Supardi",Matakuliah,Nilai),nl;
+ write("No. 2 "),nl,
+ mahasiswa("Suripah",Matkuliah,_),nl;
+ write("No. 3 "),nl,
+ mahasiswa(Nama,Matakuliah,Nilai),Nilai="D",nl.
